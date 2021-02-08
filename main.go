@@ -84,7 +84,6 @@ func matchHandler(w http.ResponseWriter, r *http.Request) {
 	// Validate there are two samples.
 	if len(r.Form) == 2 {
 		for k := range r.Form {
-			fmt.Println(r.PostFormValue(k))
 			ts.Samples = append(ts.Samples, r.PostFormValue(k))
 		}
 		// Write result as a http response

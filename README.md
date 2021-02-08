@@ -4,7 +4,7 @@ Stringcompare takes 2 texts in a POST request and returns a percentage of common
 ## About
 
 Stringcompare reponds to a POST request with curls default header which includes `Content-Type: application/x-www-form-urlencoded`
-This application could be upgraded later to upgraded to also support other types of requests such as JSON. 
+This application could be upgraded later to also support other types of requests such as JSON. 
 
 This application compares the similarity of the text based on word matching of each. Sentences with a high percentage of matching words, regardless of order, will be considered similar. 
 
@@ -44,6 +44,13 @@ docker build -t stringcompare .
 docker run -p 8080:8080 stringcompare
 ```
 
+or pull from Dockerhub
+
+```bash
+docker pull psheets88/stringcompare-app:latest
+docker run -p 8080:8080 stringcompare
+```
+
 ## Usage
 
 Stringcompare will respond to a post request with a post request containing two sample texts in x-www-form-urlencoded format. 
@@ -54,11 +61,11 @@ curl -d "sample_one=<SAMPLE ONE HERE>&sample_two=<SAMPLE TWO HERE>" http://local
 ```
 Example using Postman
 
-![](https://philsheets.com/94fa0491-3f80-4cf7-8c08-dc606d902665)
+![](https://philsheets.com/content/images/2021/02/Capture.PNG)
 
 ### Demo
 
-You can test this application using http://demo.philsheets.com
+You can test this application using https://stringcompare-igftb.ondigitalocean.app
 
 ```
 curl -d "sample_one=Test number one.&sample_two=Test number two." https://stringcompare-igftb.ondigitalocean.app
